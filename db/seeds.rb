@@ -31,6 +31,7 @@ end
     image: FFaker::Image.url("75x75"),
     description: FFaker::Lorem.paragraphs
   )
+end
 
 5.times do |n|
   5.times do |m|
