@@ -12,6 +12,9 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: {only_float: true}
   validates :quantity, presence: true, numericality: {only_integer: true}
 
+  scope :get_product_price, ->(id){where(id: id).pluck(:price).first}
+  scope :get_product_name, ->(id){where(id: id).pluck(:name).first}
+
   def product_info base_url
     {
       id: self.id,

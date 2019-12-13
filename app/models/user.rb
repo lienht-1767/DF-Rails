@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :get_info_user, ->(id){where(id: id).select(:id, :username, :email, :address, :phone, :image, :role).first}
+  scope :get_user_name, ->(id){where(id: id).pluck(:username).first}
 
   USER_ATTRIBUTES = %i(address phone role image)
 

@@ -45,3 +45,20 @@ end
     )
   end
 end
+
+5.times do |n|
+  order = Order.create!(
+    user_id: n+1,
+    address: FFaker::AddressUS.street_address,
+    phone: FFaker::PhoneNumber.phone_number,
+    status: rand(0..1)
+  )
+end
+
+5.times do |i|
+  OrderDetail.create!(
+    order_id: i+1,
+    product_id: rand(24..28),
+    quantity: rand(1..4)
+  )
+end

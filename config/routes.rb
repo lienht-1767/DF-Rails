@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get "/dashboard", to: "base_admin#dashboard"
+      resources :orders
     end
     resources :products
   end
